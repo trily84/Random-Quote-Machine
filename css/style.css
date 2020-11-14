@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: center; 
+  align-items: center;
+  margin-top: 10%;  
+}
+
+#quote-box {
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(99, 81, 58);
+  position: relative;
+  width: 600px;
+  height: 250px;
+  padding: 40px 40px;
+  background-color: cornsilk;
+}
+
+#quote-box #text #author {
+  text-align: justify;
+  height: auto;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+.btn {
+  margin-top: 5px;
+  width: 100px;
+  height: 25px;
+  background: rgb(197, 163, 118);
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background: rgb(165, 137, 101);
+  border-radius: 8px;
+}

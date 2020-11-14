@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <script>      
+    window.onload = init;
+
+    function init() {
+      generateQuote()
+        }
+
+    function generateQuote() {
+      let quoteBankLength = QUOTEBANK.length;
+      let randomNum = Math.floor(Math.random() * quoteBankLength);
+      let randomQuoteData = QUOTEBANK[randomNum];
+      let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22";
+      
+      let quoteTwitter = randomQuoteData.quote.replace(/ /g, "%20");
+      twitterLink += quoteTwitter;
+      
+      let authorTwitter = randomQuoteData.author.replace(/ /g, "%20");
+      twitterLink += "%22 - " + authorTwitter;
+      
+      document.getElementById("tweet-quote").href = twitterLink;
+      console.log("Generate Quote");
+      document.getElementById("text").innerText = randomQuoteData.quote;
+      document.getElementById("author").innerText = randomQuoteData.author;
+    }
+  </script>
+
+  <title>Random Quote Machine</title>
+</head>
+
+<body>
+  <div class="container">
+  <wrapper id="quote-box">
+    <div id="text"></div>
+    <div id="author"></div>
+    <button id="new-quote" class="btn" onClick="generateQuote();">New Quote</button>
+    <a href="#" target="_blank" id="tweet-quote"><button class="btn">Tweet Quote</button></a>
+  </wrapper>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="js/quotebank.js"></script>
+  </div>
+</body>
+</html>
